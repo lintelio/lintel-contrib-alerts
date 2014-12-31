@@ -19,7 +19,13 @@ bower install lintel-alerts --save
 Once the module has been installed, you will have to load it in your main SASS file:
 
 ```scss
-@import "bower_components/lintel-alerts/sass/lintel-alerts.scss"
+@import "bower_components/lintel-contrib-alerts/sass/alerts.scss"
+```
+
+This module also includes a javascript component, which you will have to load separately.
+
+```html
+<script src="bower_components/lintel-contrib-alerts/dist/alerts.min.js" type="text/javascript"></script>
 ```
 
 You can use [wiredep](https://github.com/taptapship/wiredep) or [grunt-wiredep](https://github.com/stephenplusplus/grunt-wiredep) to automatically inject files in your build process.
