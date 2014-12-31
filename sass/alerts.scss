@@ -1,0 +1,70 @@
+// Please try to maintain the same code style as outlined here:
+// https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
+
+@import 'alerts-vars';
+@import 'alerts-functions';
+@import 'alerts-mixins';
+
+
+// Base
+// ----
+.alert {
+  background-color: $alert-base-bg;
+  border: 1px solid $alert-base-border;
+  border-radius: $alert-border-radius;
+  color: $alert-base-text;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-y;
+}
+
+
+// Close Button
+// ------------
+.alert-close {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  font-size: $alert-close-font-size;
+  font-weight: $alert-close-font-weight;
+  height: 1em;
+  line-height: $alert-close-line-height;
+  margin: $alert-close-margin-top $alert-close-margin-right $alert-close-margin-bottom $alert-close-margin-left;
+  padding: 0;
+  opacity: $alert-close-opacity;
+  text-decoration: none;
+}
+
+
+// States
+// ------
+// Primary
+.alert-primary {
+  @include make-alert($bg: $alert-primary-bg, $border: $alert-primary-border, $text: $alert-primary-text);
+}
+
+// Secondary
+.alert-secondary {
+  @include make-alert($bg: $alert-secondary-bg, $border: $alert-secondary-border, $text: $alert-secondary-text);
+}
+
+// Error
+.alert-error {
+  @include make-alert($bg: $alert-error-bg, $border: $alert-error-border, $text: $alert-error-text);
+}
+
+// Warning
+.alert-warning {
+  @include make-alert($bg: $alert-warning-bg, $border: $alert-warning-border, $text: $alert-warning-text);
+}
+
+// Success
+.alert-success {
+  @include make-alert($bg: $alert-success-bg, $border: $alert-success-border, $text: $alert-success-text);
+}
+
+// Info
+.alert-info {
+  @include make-alert($bg: $alert-info-bg, $border: $alert-info-border, $text: $alert-info-text);
+}

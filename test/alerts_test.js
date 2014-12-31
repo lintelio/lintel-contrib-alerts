@@ -23,7 +23,7 @@ var gm = require('gm');
     test.ifError(value)
 */
 
-exports.contrib_alerts = {
+exports.alerts = {
   setUp: function (done) {
     // setup here if necessary
     done();

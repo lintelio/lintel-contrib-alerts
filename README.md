@@ -1,4 +1,4 @@
-lintel-contrib-alerts
+lintel-alerts
 =====================
 
 > Alerts for lintel.
@@ -10,13 +10,13 @@ This module requires Lintel.
 If you haven't used [Lintel](http://lintel.io/) before, be sure to check out the [Getting Started](http://lintel.io/getting-started) guide, as it explains how to install and use this module. Once you're familiar with that process, you may install this module with this command:
 
 ```shell
-bower install lintel-contrib-alerts --save
+bower install lintel-alerts --save
 ```
 
 Once the module has been installed, you will have to load it in your main SASS file:
 
 ```scss
-@import "bower_components/lintel-contrib-alerts/sass/lintel-contrib-alerts.scss"
+@import "bower_components/lintel-alerts/sass/lintel-alerts.scss"
 ```
 
 You can use [wiredep](https://github.com/taptapship/wiredep) or [grunt-wiredep](https://github.com/stephenplusplus/grunt-wiredep) to automatically inject files in your build process.

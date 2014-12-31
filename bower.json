@@ -9,9 +9,9 @@
     "lintel"
   ],
   "main": [
-    "sass/contrib_alerts.sass",
-    "dist/contrib_alerts.css",
-    "dist/contrib_alerts.min.js"
+    "sass/alerts.sass",
+    "dist/alerts.css",
+    "dist/alerts.min.js"
   ],
   "license": "MIT",
   "dependencies": {

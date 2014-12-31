@@ -1,0 +1,56 @@
+// Please try to maintain the same code style as outlined here:
+// https://github.com/lintelio/lintel/blob/master/CONTRIBUTING.md
+
+// Global
+$alert-padding-y:           $cushion-y-md !default;
+$alert-padding-x:           $cushion-x-md !default;
+
+$alert-margin-y:            $cushion-y-lg !default;
+
+$alert-border-radius:       $border-radius-base !default;
+
+// Close
+$alert-close-font-size:     16px !default;
+$alert-close-font-weight:   700;
+$alert-close-line-height:   1;
+$alert-close-opacity:       0.4 !default;
+
+$alert-close-margin-top:    -1px;
+$alert-close-margin-right:  0;
+$alert-close-margin-bottom: 0;
+$alert-close-margin-left:   10px;
+
+// Base
+$alert-base-bg:             $bg-light !default;
+$alert-base-border:         $border-base !default;
+$alert-base-text:           $text-base !default;
+
+// Primary
+$alert-primary-bg:          $state-primary-bg !default;
+$alert-primary-border:      $state-primary-border !default;
+$alert-primary-text:        $state-primary-text !default;
+
+// Secondary
+$alert-secondary-bg:        $state-secondary-bg !default;
+$alert-secondary-border:    $state-secondary-border !default;
+$alert-secondary-text:      $state-secondary-text !default;
+
+// Error
+$alert-error-bg:            $state-error-bg !default;
+$alert-error-border:        $state-error-border !default;
+$alert-error-text:          $state-error-text !default;
+
+// Warning
+$alert-warning-bg:          $state-warning-bg !default;
+$alert-warning-border:      $state-warning-border !default;
+$alert-warning-text:        $state-warning-text !default;
+
+// Success
+$alert-success-bg:          $state-success-bg !default;
+$alert-success-border:      $state-success-border !default;
+$alert-success-text:        $state-success-text !default;
+
+// Info
+$alert-info-bg:             $state-info-bg !default;
+$alert-info-border:         $state-info-border !default;
+$alert-info-text:           $state-info-text !default;

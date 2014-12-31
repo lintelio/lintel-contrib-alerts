@@ -1,5 +1,5 @@
 /*
- * lintel-contrib-alerts
+ * lintel-alerts
  * https://github.com/lintelio/lintel-contrib-alerts
  *
  * Copyright (c) 2014 Marius Craciunoiu
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '<%= lintel.dist %>/contrib_alerts.css': 'sass/lintel-core-loader.scss'
+          '<%= lintel.dist %>/alerts.css': 'sass/lintel-core-loader.scss'
         }
       }
     },
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
     // Autoprefix sass
     autoprefixer: {
       dist: {
-        src: '<%= lintel.dist %>/contrib_alerts.css'
+        src: '<%= lintel.dist %>/alerts.css'
       }
     },
 
@@ -49,8 +49,8 @@ module.exports = function (grunt) {
     cssmin: {
       // TODO: sourcemap
       dist: {
-        src: '<%= lintel.dist %>/contrib_alerts.css',
-        dest: '<%= lintel.dist %>/contrib_alerts.min.css'
+        src: '<%= lintel.dist %>/alerts.css',
+        dest: '<%= lintel.dist %>/alerts.min.css'
       }
     },
 
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         csslintrc: '.csslintrc'
       },
       dist: {
-        src: ['<%= lintel.dist %>/lintel-contrib-alerts.css']
+        src: ['<%= lintel.dist %>/lintel-alerts.css']
       }
     },
 
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
       xs: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/xs.png',
           windowSize: {
               width: 320,
@@ -104,7 +104,7 @@ module.exports = function (grunt) {
       sm: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/sm.png',
           windowSize: {
               width: 480,
@@ -119,7 +119,7 @@ module.exports = function (grunt) {
       md: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/md.png',
           windowSize: {
               width: 768,
@@ -134,7 +134,7 @@ module.exports = function (grunt) {
       lg: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/lg.png',
           windowSize: {
               width: 1024,
@@ -149,7 +149,7 @@ module.exports = function (grunt) {
       xl: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/xl.png',
           windowSize: {
               width: 1280,
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
       "2xl": {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/2xl.png',
           windowSize: {
               width: 1440,
@@ -179,7 +179,7 @@ module.exports = function (grunt) {
       "3xl": {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/3xl.png',
           windowSize: {
               width: 1680,
@@ -194,7 +194,7 @@ module.exports = function (grunt) {
       max: {
         options: {
           siteType: 'url',
-          site: 'http://localhost:4554/contrib_alerts.html',
+          site: 'http://localhost:4554/alerts.html',
           savePath: '<%= lintel.test %>/tmp/max.png',
           windowSize: {
               width: 1920,
@@ -235,7 +235,7 @@ module.exports = function (grunt) {
       },
       concat: {
         files: {
-          'dist/contrib_alerts.min.js': ['js/**/*.js']
+          'dist/alerts.min.js': ['js/**/*.js']
         }
       }
     },
