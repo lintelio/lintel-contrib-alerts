@@ -1,7 +1,10 @@
-lintel-alerts
+lintel-contrib-alerts
 =====================
 
 > Alerts for lintel.
+
+[![npm](https://img.shields.io/npm/v/lintel-contrib-alerts.svg)](https://github.com/lintelio/lintel-contrib-alerts)
+[![Bower](https://img.shields.io/bower/v/lintel-contrib-alerts.svg)](https://github.com/lintelio/lintel-contrib-alerts)
 
 
 ## Getting Started
@@ -25,39 +28,75 @@ You can use [wiredep](https://github.com/taptapship/wiredep) or [grunt-wiredep](
 ## Variables
 Check the vars file in the `sass` folder to see the full list of variables you can customize.
 
-#### $sample-bg
-Default value: `#4b77be`  
+#### $alert-padding-y
+Default value: `$cushion-y-md`  
 
-Change the post background.
+Change the alert padding-top and padding-bottom.
 
-#### $sample-color
-Default value: `#fff`
+#### $alert-padding-x
+Default value: `$cushion-x-md`  
 
-Change the post color.
+Change the alert padding-left and padding-right.
+
+#### $alert-margin-y
+Default value: `$cushion-y-lg`  
+
+Change the alert margin-bottom.
+
+#### $alert-border-radius
+Default value: `$border-radius-base`  
+
+Change the alert border-radius.
+
+#### $alert-close-*
+Change the alert close-button vars.
+
+#### $alert-*-bg
+Change the background for a specific state. Use `base` for default style.
+
+#### $alert-*-border
+Change the border for a specific state. Use `base` for default style.
+
+#### $alert-*-text
+Change the text color for a specific state. Use `base` for default style.
 
 
 ## Mixins
 Check the mixins file in the `sass` folder to see how you can extend this module.
 
-#### sample-mixin($bg, $color)
-Default $bg: `$sample-bg`  
-Default $color: `$sample-color`
-
-Sets the background color and text color of an element.
+#### make-alert($bg, $border, $text)
+Use this mixin to create a new alert state.
 
 ```scss
-.post {
-  @include sample-mixin(#fff, #000);
+.alert-bacon {
+  @include make-alert(#f00, #fff, #fff);
 }
 ```
 
 
 ## Examples
 
-#### Single Post
+#### Base Alert
 ```html
-<div class="post">
+<div class="alert">
   Hello world!
+</div>
+```
+
+#### Error Alert
+```html
+<div class="alert alert-error">
+  <strong>Error!</strong> It’s toe-tappingly tragic!
+</div>
+```
+
+#### Dismissable Alert
+```html
+<div class="alert alert-primary">
+  <button type="button" class="alert-close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Welcome!</strong> If for any reason you’re not completely satisfied, I hate you.
 </div>
 ```
 
