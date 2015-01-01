@@ -13,7 +13,7 @@ This module requires Lintel.
 If you haven't used [Lintel](http://lintel.io/) before, be sure to check out the [Getting Started](http://lintel.io/getting-started) guide, as it explains how to install and use this module. Once you're familiar with that process, you may install this module with this command:
 
 ```shell
-bower install lintel-alerts --save
+bower install lintel-contrib-alerts --save
 ```
 
 Once the module has been installed, you will have to load it in your main SASS file:
