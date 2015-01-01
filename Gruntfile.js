@@ -1,5 +1,5 @@
 /*
- * lintel-alerts
+ * lintel-contrib-alerts
  * https://github.com/lintelio/lintel-contrib-alerts
  *
  * Copyright (c) 2014 Marius Craciunoiu
