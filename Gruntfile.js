@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         csslintrc: '.csslintrc'
       },
       dist: {
-        src: ['<%= lintel.dist %>/lintel-alerts.css']
+        src: ['<%= lintel.dist %>/alerts.css']
       }
     },
 
