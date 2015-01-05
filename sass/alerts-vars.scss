@@ -11,14 +11,14 @@ $alert-border-radius:       $border-radius-base !default;
 
 // Close
 $alert-close-font-size:     16px !default;
-$alert-close-font-weight:   700;
-$alert-close-line-height:   1;
+$alert-close-font-weight:   700 !default;
+$alert-close-line-height:   1 !default;
 $alert-close-opacity:       0.4 !default;
 
-$alert-close-margin-top:    -1px;
-$alert-close-margin-right:  0;
-$alert-close-margin-bottom: 0;
-$alert-close-margin-left:   10px;
+$alert-close-margin-top:    -1px !default;
+$alert-close-margin-right:  0 !default;
+$alert-close-margin-bottom: 0 !default;
+$alert-close-margin-left:   10px !default;
 
 // Base
 $alert-base-bg:             $bg-light !default;
