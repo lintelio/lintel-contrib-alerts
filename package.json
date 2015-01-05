@@ -1,6 +1,6 @@
 {
   "name": "lintel-contrib-alerts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Alerts for lintel.",
   "homepage": "https://github.com/lintelio/lintel-contrib-alerts",
   "repository": "https://github.com/lintelio/lintel-contrib-alerts.git",
@@ -20,7 +20,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "lintel": "~0.1.0"
+    "lintel": "~0.1.2"
   },
   "devDependencies": {
     "gm": "^1.17.0",
