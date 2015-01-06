@@ -3,7 +3,7 @@ lintel-contrib-alerts
 
 > Alerts for lintel.
 
-[![npm](https://img.shields.io/npm/v/lintel-contrib-alerts.svg)](https://github.com/lintelio/lintel-contrib-alerts)
+[![npm](https://img.shields.io/npm/v/lintel-contrib-alerts.svg)](https://www.npmjs.com/package/lintel-contrib-alerts)
 [![Bower](https://img.shields.io/bower/v/lintel-contrib-alerts.svg)](https://github.com/lintelio/lintel-contrib-alerts)
 
 
