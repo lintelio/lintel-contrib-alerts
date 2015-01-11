@@ -241,6 +241,18 @@ module.exports = function (grunt) {
       }
     },
 
+    // Copy files
+    copy: {
+      js: {
+        files: [{
+          expand: true,
+          cwd: 'js/',
+          src: ['**/*.js'],
+          dest: 'dist/'
+        }]
+      }
+    },
+
     // Run tests
     nodeunit: {
       tests: ['<%= lintel.test %>/*_test.js']
@@ -252,7 +264,13 @@ module.exports = function (grunt) {
         files: [
           'sass/**/*.scss'
         ],
-        tasks: ['test-watch']
+        tasks: ['sass-compile']
+      },
+      js: {
+        files: [
+          'js/**/*.js'
+        ],
+        tasks: ['js-compile']
       },
       livereload: {
         files: [
@@ -266,21 +284,27 @@ module.exports = function (grunt) {
 
     // Notify of changes
     notify: {
-      compile: {
+      sass: {
         options: {
           title: 'lintel-contrib-alerts',
-          message: 'Done Compiling'
+          message: 'SASS Compiled'
+        }
+      },
+      js: {
+        options: {
+          title: 'lintel-contrib-alerts',
+          message: 'JS Compiled'
         }
       }
     }
 
   });
 
-  grunt.registerTask('compile', ['sass:dist', 'autoprefixer:dist', 'cssmin:dist', 'uglify', 'notify:compile']);
+  grunt.registerTask('sass-compile', ['sass:dist', 'autoprefixer:dist', 'cssmin:dist', 'csslint', 'notify:sass']);
 
-  grunt.registerTask('test-watch', ['compile', 'csslint', 'jshint']);
+  grunt.registerTask('js-compile', ['copy:js', 'uglify:concat', 'jshint', 'notify:js']);
 
-  grunt.registerTask('test', ['test-watch', 'connect', 'clean:tests', 'webshot', 'nodeunit']);
+  grunt.registerTask('test', ['sass-compile', 'js-compile', 'connect', 'clean:tests', 'webshot', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test', 'watch']);
