@@ -82,6 +82,7 @@ module.exports = function (grunt) {
 
     // Remove previous screenshots
     clean: {
+      dist: ['<%= lintel.dist %>'],
       tests: ['<%= lintel.test %>/tmp']
     },
 
@@ -303,9 +304,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('sass-compile', ['sass:dist', 'autoprefixer:dist', 'cssmin:dist', 'csslint', 'notify:sass']);
 
-  grunt.registerTask('js-compile', ['copy:js', 'uglify:concat', 'jshint', 'notify:js']);
+  grunt.registerTask('js-compile', ['copy:js', 'jshint', 'uglify:concat', 'notify:js']);
 
-  grunt.registerTask('test', ['sass-compile', 'js-compile', 'connect', 'clean:tests', 'webshot', 'nodeunit']);
+  grunt.registerTask('test', ['clean:dist', 'sass-compile', 'js-compile', 'connect', 'clean:tests', 'webshot', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test', 'watch']);
