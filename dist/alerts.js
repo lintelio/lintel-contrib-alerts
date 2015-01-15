@@ -2,25 +2,23 @@
   'use strict';
 
   var Alert = function(element) {
-    this.element = $(element);
-    this.alert = this.element.closest('.alert');
+    this.$closeBtn = $(element);
+    this.$alert = this.$closeBtn.closest('.alert');
   };
 
   Alert.prototype.close = function() {
-    var $this = this.element;
-    var $alert = this.alert;
-
-    // Close events
-    var closeEvent = $.Event('close.lt.alert', {
-      relatedTarget: $this[0]
+    // Close event
+    var hideEvent = $.Event('hide.lt.alert', {
+      relatedTarget: this.$closeBtn[0]
     });
 
-    if (closeEvent.isDefaultPrevented()) { return; }
+    this.$alert.trigger($.Event('close.lt.alert'));
 
-    // Remove Alert
-    $alert.trigger($.Event('close.lt.alert'));
+    // Allow event to be prevented
+    if (hideEvent.isDefaultPrevented()) { return; }
 
-    $alert.detach().trigger('closed.bs.alert').remove();
+    // Remove alert and fire closed event
+    this.$alert.detach().trigger('closed.bs.alert').remove();
   };
 
   // Define jQuery plugin
@@ -48,7 +46,7 @@
   $.fn.alert = Plugin;
 
   // Events
-  $(document).on('click.lt.alert', '.alert-close', function(e) {
+  $(document).on('click.lt.alert', '[data-toggle="alert-close"]', function(e) {
     e.preventDefault();
     Plugin.call($(this), 'close');
   });
