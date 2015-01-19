@@ -1,9 +1,10 @@
 (function() {
   'use strict';
 
-  var Alert = function(element) {
-    this.$closeBtn = $(element);
-    this.$alert = this.$closeBtn.closest('.alert');
+  var Alert = function(element, options) {
+    this.$alert = $(element);
+    this.$closeBtn = this.$alert.find('[data-toggle="alert-close"]');
+    this.options = options || {};
   };
 
   Alert.prototype.close = function() {
@@ -19,28 +20,26 @@
 
     // Remove alert and fire closed event
     this.$alert.detach().trigger('closed.bs.alert').remove();
+    this.options.onHide.call(this, this.$alert, this.$closeBtn);
   };
 
   // Define jQuery plugin
-  function Plugin(method, options) {
-    var settings = $.extend({}, Plugin.defaults, options);
-
+  function Plugin(method) {
     return this.each(function () {
-      var $this = $(this);
+      var $alert = $(this);
+      var settings = $.extend({}, Plugin.defaults, $alert.data(), typeof method === 'object' && method);
 
-      var data = $this.data('lt.alert');
+      var data = $alert.data('lt.alert');
       if (!data) {
-        data = new Alert(this);
-        $this.data('lt.alert', data);
+        data = new Alert(this, settings);
+        $alert.data('lt.alert', data);
       }
       if (typeof method === 'string') { data[method](); }
-
-      settings.callback.call($this);
     });
   }
 
   Plugin.defaults = {
-    callback: function() {}
+    onHide: function() {}
   };
 
   $.fn.alert = Plugin;
@@ -48,7 +47,7 @@
   // Events
   $(document).on('click.lt.alert', '[data-toggle="alert-close"]', function(e) {
     e.preventDefault();
-    Plugin.call($(this), 'close');
+    Plugin.call($(this).closest('.alert'), 'close');
   });
 
 })(jQuery);

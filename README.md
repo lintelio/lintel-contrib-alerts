@@ -80,6 +80,63 @@ Use this mixin to create a new alert state.
 ```
 
 
+## JavaScript
+
+### Options
+
+Name      | Type                           | Default             | Description
+--------- | ------------------------------ | ------------------- | -----------
+onHide    | function                       |                     | Callback function to execute when alert is closed.
+
+
+### Methods
+
+Name      | Description
+--------- | -----------
+close     | Close alert.
+
+
+### Events
+
+Event                | Description
+-------------------- | ------------------------------
+close.lt.alert       | Fires immediately before alert is hidden. Can prevent alert from hiding here.
+closed.lt.alert      | Fires immediately after alert is hidden.
+
+
+### Data-attr
+Add `data-toggle="alert-close"` to the `.alert-close` button.
+You can add additional options as data-attributes.
+
+```html
+<div class="alert alert-error">
+  <button type="button" class="alert-close" data-toggle="alert-close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Error!</strong> It’s toe-tappingly tragic!
+</div>
+```
+
+
+### jQuery
+Call the jQuery plugin on the alert, passing in any options.
+
+```js
+var options = {
+  onHide: function(alert, closeBtn) {
+    console.log('onHide', this, alert, closeBtn);
+  }
+};
+
+$('#myAlert').alert(options);
+```
+
+Alternatively, you can use the default options:
+```js
+$('#myAlert').alert('close');
+```
+
+
 ## Examples
 
 #### Base Alert
